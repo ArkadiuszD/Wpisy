@@ -1,0 +1,46 @@
+<%= form_for(@gist) do |f| %>
+
+<% 
+b=[]
+a=Pygments::Lexer.all.select{|y| !(y.filenames.empty?)}.map{|x|[x.name.downcase, x.filenames.first.gsub('*','')]}.sort
+a.flatten.select.with_index{|a,i| (i+1) % 2 == 1}.each { |e| 
+  b.push(e) }
+ %>
+
+  <% if @gist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gist.errors.count, "error") %> prohibited this gist from being saved:</h2>
+
+      <ul>
+      <% @gist.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+  <div class="field">
+    <%= f.label :KOD %><br>
+    <%= f.text_area :snippet %>
+  </div>
+  <div class="field">
+    <%= f.label :Język %>:<br>
+   <%= f.select(:lang, b) %>
+  
+  </div>
+  <div class="field">
+    <%= f.label :Opis%><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= 
+
+    f.submit(class:'btn btn-success')
+
+    %>
+  </div>
+  <%= link_to 'Cofnij', gists_path,class:'btn btn-default' %>
+  <%= link_to 'Pokaż', @gist ,class:'btn btn-default'%>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+
+<%= render 'index' %>
+<h1>Editing gist</h1>
+
+<%= render 'form' %>
+
+
+

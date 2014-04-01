@@ -1,0 +1,22 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+gist_list = [
+	["class fun \n OK = 'Jest OKEJ' \nend","python","super python"],
+	["class CzytoJavaCzytoSen{\n int value; \nstring something; \nboolean fake; \n}","java","java jest najlepsza"],
+	["var git = 'Git jest git'","javascript","javascript nie jest git"]
+]
+
+i=0
+while i<8 do
+	gist_list.each do |x,y,z|
+		Gist.create( snippet: x, lang: y, description: z)
+	end
+	i+=1
+end

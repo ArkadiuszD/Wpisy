@@ -1,0 +1,41 @@
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+          </button>
+          <a class="navbar-brand" ></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/gists">Home</a></li>
+            
+
+          </ul>
+          <form class="navbar-form navbar-right" role="form">
+              <div class="form-group">
+                <%= form_tag gists_path, :method => 'get' do %> 
+                
+                <%= (text_field_tag  :search, params[:search], class:'form-control') %>
+                <%= submit_tag "Szukaj", class:'btn btn-success' , :name => nil, :onclick => "$( document ).ready($('a.load-more-posts').remove());"%>
+                <% end %>
+              </div>
+            </form>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+      </div>
+
+      <div class="container" >
+	<br />
+<br />
+<br />
+<br />
+<br />
+<%= (text_field_tag  :search, params[:search], class:'form-control') %>
+                <%= submit_tag "Szukaj", class:'btn btn-success' , :name => nil, :onclick => "$( document ).ready($('a.load-more-posts').remove());"%>
+<div>
+<%= link_to 'Nowy wpis', new_gist_path, class:'btn btn-primary btn-lg' %>
+</div>
+
+

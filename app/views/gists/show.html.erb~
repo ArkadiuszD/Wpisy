@@ -1,0 +1,26 @@
+<%= render 'index' %>
+<br/>
+<br/>
+<br/>
+<br/>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kod:</strong>
+</p>
+
+<%= raw Pygments.highlight(@gist.snippet, lexer: @gist.lang )%>
+
+<p>
+  <strong>Język:</strong>
+ <h4> <%= @gist.lang %> </h4>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+ <h4 style="color:red;"> <%= @gist.description %> </h4>
+</p>
+
+<%= link_to 'Edytuj', edit_gist_path(@gist),class:'btn btn-primary' %> |
+<%= link_to 'Cofnij', gists_path,class:'btn btn-default' %>
+
