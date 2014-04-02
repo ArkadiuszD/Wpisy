@@ -1,6 +1,6 @@
 
 <%= render 'index' %>
-<h1>Editing gist</h1>
+<h1>Edytowanie Wpisu</h1>
 
 <%= render 'form' %>
 

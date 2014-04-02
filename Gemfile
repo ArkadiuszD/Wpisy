@@ -16,6 +16,7 @@ gem 'quiet_assets'
 gem 'will_paginate', '~> 3.0.5'
 gem 'taps'
 gem 'haml-rails'
+gem "social-buttons", '~> 0.3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

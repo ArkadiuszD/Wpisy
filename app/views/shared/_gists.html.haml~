@@ -2,9 +2,9 @@
   %table.table-bordered.table-striped.table-condensed.cf
     %thead
       %tr
-        %th Snippet Preview
-        %th Lang
-        %th Description
+        %th Kod
+        %th Język
+        %th Opis
         %th
     - @gists.each do |gist|
       %tr
@@ -13,6 +13,7 @@
           %h4= gist.lang
         %td= gist.description
         %td
-          = link_to 'Show Whole', gist,class:'btn btn-success'
-          = link_to 'Edit', edit_gist_path(gist),class:'btn btn-primary'
+          = link_to 'Pokaż', gist,class:'btn btn-success'
+          = link_to 'Edytuj', edit_gist_path(gist),class:'btn btn-primary'
+
           = link_to 'Destroy', gist, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-danger'

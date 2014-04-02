@@ -13,7 +13,7 @@
 
 <p>
   <strong>Język:</strong>
- <h4> <%= @gist.lang %> </h4>
+ <h4 style="color:blue;"> <%= @gist.lang %> </h4>
 </p>
 
 <p>
@@ -21,6 +21,12 @@
  <h4 style="color:red;"> <%= @gist.description %> </h4>
 </p>
 
-<%= link_to 'Edytuj', edit_gist_path(@gist),class:'btn btn-primary' %> |
-<%= link_to 'Cofnij', gists_path,class:'btn btn-default' %>
+<div class="form-group">
+            <div class="btn-group btn-group-lg">
+                <%= link_to 'Edit', edit_gist_path(@gist), class: "btn btn-success" %>
+                <%= link_to 'Back', gists_path, class: "btn btn-danger" %>
+                <%= link_to 'Destroy', @gist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info" %>
+            </div>
+        </div>
+<%= tweet_button %>
 
